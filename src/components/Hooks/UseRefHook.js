@@ -6,7 +6,7 @@ const UseRefHook = () => {
 
     useEffect(()=>{
         prevStateValue.current = text
-    }, [text])
+    }, [text]) 
     return <>
     <h1>useRef() Hook</h1>
     <input type='text' value={text} onChange={e=>setText(e.target.value)}/>
