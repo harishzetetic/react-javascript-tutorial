@@ -3,7 +3,6 @@ import { useRef, useState, useEffect } from 'react';
 const UseRefHook = () => {
     const [text, setText] = useState('')
     const prevStateValue = useRef('')
-
     useEffect(()=>{
         prevStateValue.current = text
     }, [text]) 
