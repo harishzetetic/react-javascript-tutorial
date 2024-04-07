@@ -1,9 +1,12 @@
 import './App.css';
-import UseRefHook from './components/Hooks/UseRefHook';
+import UseDeferredValueHook from './components/Hooks/UseDeferredValueHook';
+import UseReducerHook2 from './components/Hooks/UseReducerHook2';
+import UseTransitionHook from './components/Hooks/UseTransitionHook';
 
 function App() {
   return (<div className='App'>
-    <UseRefHook />
+    <h1>Use Deferred Value Hook</h1>
+    <UseDeferredValueHook />
     </div>);
 }
 
