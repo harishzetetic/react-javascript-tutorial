@@ -1,8 +1,5 @@
 import { useDeferredValue, useMemo, useState } from "react";
 
-
-
-
 const UseDeferredValueHook = () => {
     const [input, setInput] = useState('');
     const handleChange = e => {
