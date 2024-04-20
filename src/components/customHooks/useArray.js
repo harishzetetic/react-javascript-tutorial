@@ -2,8 +2,8 @@ import { useState } from "react";
 
 export default function useArray(defaultValue){
     const [array, setArray] = useState(defaultValue);
-
-    function push(element){
+    
+    function push(element){ 
         setArray(a=>[...a, element])
     }
     function filter(callback){
