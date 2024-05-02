@@ -1,26 +1,17 @@
-import { useState } from 'react';
 import './App.css';
-import usePrevious from './components/customHooks/usePrevious';
-import useStateWithHistory from './components/customHooks/useStateWithHistory';
+import useScript from './components/customHooks/useScript';
  
 function App() {
-  const [count, setCount, {history, pointer, back, forward, go}] = useStateWithHistory(1);
-  const [name, setName] = useState('Known')
-
-
+  
+  const {loading, error} = useScript('https://bootswatch.com/5/sketchy/bootstrap.css')
+  if(loading){
+    <div>loading</div>
+  }
+  if(error){
+    <div>Error While Loading</div>
+  }
   return (<div className='App'>
-    <h1>Custom Hook | useStateWithHistory</h1>
-    <div>{count} </div>
-    <div>{history.join(', ')}</div>
-    <div>Pointer - {pointer}</div>
-    <div>{name}</div>
-
-    <button onClick={()=>setCount(prev=>prev*2)}>Double</button>
-    <button onClick={()=>setCount(prev=>prev+1)}>Incremetn</button>
-    <button onClick={back}>Back</button>
-    <button onClick={forward}>Forward</button>
-    <button onClick={()=>go(2)}>Go To 2nd Index</button>
-    <button onClick={()=>setName('Technical')}>Change Name</button>
+    <h1>Custom Hook | Theme Activated by useScript Custom Hook</h1>
     </div>);
 }
 
